@@ -11,21 +11,21 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: tiago
-  password: <%= ENV['AutenticationDevice_DATABASE_240321'] %>
+  password: <%= ENV['AutenticationDevise_DATABASE_240321'] %>
   
 development:
   <<: *default
-  database: AutenticationDevice_development
+  database: AutenticationDevise_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: AutenticationDevice_test
+  database: AutenticationDevise_test
 
 production:
   <<: *default
-  database: AutenticationDevice_production
-  username: AutenticationDevice
-  password: <%= ENV['AutenticationDevice_DATABASE_240321'] %>
+  database: AutenticationDevise_production
+  username: AutenticationDevise
+  password: <%= ENV['AutenticationDevise_DATABASE_240321'] %>
