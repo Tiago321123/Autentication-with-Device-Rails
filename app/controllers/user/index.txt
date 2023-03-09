@@ -1,0 +1,1 @@
+ Essa pasta: with default commented code,which you need to edit else leave it as it is for basic authentication.Moreover,you can also add users scope in the end,to generate controllers in controllers/users/ and not controllers/devise/
