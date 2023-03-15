@@ -23,7 +23,8 @@ class User::ConfirmationsController < Devise::ConfirmationsController
   #   super(resource_name)
   # end
 
-  # The path used after confirmation.
+  # The path used after confirmatio
+    binding.pryn.
   # def after_confirmation_path_for(resource_name, resource)
   #   super(resource_name, resource)
   # end

@@ -1,0 +1,57 @@
+require 'rails_helper'
+
+RSpec.describe "User authentication", type: :feature do
+  let(:user) { create(:user, email: 'user@example.com', password: 'password') }
+
+  scenario "User signs in with valid credentials" do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+    expect(page).to have_content 'Signed in successfully.'
+  end
+
+  scenario "User signs in with invalid credentials" do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'wrong_password'
+    click_button 'Log in'
+    expect(page).to have_content 'Invalid Email or password.'
+  end
+end
+
+Nesse exemplo, estamos usando a biblioteca factory_bot_rails para criar um objeto User em cada cenário de teste. Em seguida, estamos usando os métodos visit, fill_in e click_button do Capybara para simular a entrada do usuário na página de login.
+
+No primeiro cenário, estamos preenchendo o formulário com as credenciais válidas do usuário e clicando no botão de login. Em seguida, estamos verificando se a página exibe a mensagem de "Signed in successfully.", o que indica que o usuário foi autenticado com sucesso.
+
+No segundo cenário, estamos preenchendo o formulário com uma senha incorreta e verificando se a página exibe a mensagem de "Invalid Email or password.", o que indica que o usuário não foi autenticado com sucesso.
+
+Esse é um exemplo básico de teste de autenticação de usuário usando o RSpec e o Devise. Lembre-se de que sua implementação pode ser diferente, dependendo dos requisitos específicos do seu aplicativo.
+
+
+-------------------------------
+
+require 'rails_helper'
+
+RSpec.describe "User authentication", type: :feature do
+  let(:user) { create(:user, email: 'user@example.com', password: 'password') }
+
+  scenario "User signs in with valid credentials" do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+    expect(page).to have_content 'Signed in successfully.'
+  end
+
+  scenario "User signs in with invalid credentials" do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'wrong_password'
+    click_button 'Log in'
+    expect(page).to have_content 'Invalid Email or password.'
+  end
+end
+Nesse exemplo, estamos usando a biblioteca factory_bot_rails para criar um objeto User em cada cenário de teste. Em seguida, estamos usando os métodos visit, fill_in e click_button do Capybara para simular a entrada do usuário na página de login.
+
+No primeiro cenário, estamos preenchendo o formulário com as credenciais válidas do usuário e clicando no botão de login. Em seguida, estamos verificando se a página exibe a mensagem de "Signed in successfully.", o que indica que o usuário foi autenticado com sucesso.
